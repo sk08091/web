@@ -1,0 +1,107 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>성경이의 사이트</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="board.css">
+<script type="text/javascript">
+var counts = 0;
+var imgVisible=false;
+function startGame()
+{
+alert ("게임시작!");
+gameLoop();
+}
+
+function gameLoop()
+{
+
+  flashImg();
+  createImage();
+  imgVisible = !imgVisible;
+  counts++;
+  if (counts < 12)
+  {
+
+  setTimeout(gameLoop, 3000);
+  }
+else
+{
+  alert("게임 끝~~~!!!!!!!!");
+}
+}
+
+function flashImg()
+{
+  var board = document.getElementById("board");
+  var classToSet="";
+
+  if(imgVisible) {
+    classToSet="gameImg visible";
+  } else {
+      classToSet = "gameImg hidden";
+
+    }
+    for (var i=0; i<8;i++){
+      board.children[i].className = classToSet;
+    }
+
+}
+function createImage()
+{
+  var board = document.getElementById("board");
+
+  for(var i = 0; i < 8;i++){
+    board.children[i].innerHTML = "Image";
+
+}
+var randomNumber=Math.floor(Math.random()*8)+1;
+board.children[randomNumber-1].innerHTML="Diff"
+}
+</script>
+  </head>
+  <body>
+    <script>
+    var name = prompt('당신의 이름을 입력하세여','홍길동');
+    alert(name + "님 안녕하세요~");
+      /*
+      alert ("저의 웹사이트에 오신걸 환영합니다");
+
+      var num = 300;
+      if(num > 100)
+      {
+        alert("num은100보다큰수입니다");
+      }
+for(var i = 1; i <= 100; i++)
+{
+  document.write(i);
+  document.write('<br>');
+}
+*/
+    </script>
+
+    <h1><a href="index.html">뿌뿡!  나는 <strong>박성경</strong>입니다.</a></h1>
+    <div id="grid">
+      <div class="">
+        <ol>
+          <li><a href="1.html"><strong>좋아하는음식</strong></a></li>
+          <li><a href="2.html">좋아하는 게임/유튜버></a></li>
+          <li><a href="3.html"><strong>성경이의 유튜브 채널<strong></a></li>
+        </ol>
+      </div>
+
+    <div class="">
+      <input type="button" name="" value="Play" onclick="startGame();">
+      <div id="board">
+<div class="gameImg">1</div>
+<div class="gameImg">2</div>
+<div class="gameImg">3</div>
+<div class="gameImg">4</div>
+<div class="gameImg">5</div>
+<div class="gameImg">6</div>
+<div class="gameImg">7</div>
+<div class="gameImg">8</div>
+      </div>
+    </div>
+  </body>
+</html>

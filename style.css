@@ -1,0 +1,15 @@
+  #grid{
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  }
+h1 {
+  font: 45px;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  margin: 0px
+}
+a{
+  color: black;
+  text-decoration: none;
+}
